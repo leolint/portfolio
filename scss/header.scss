@@ -1,0 +1,192 @@
+@import 'mixins';
+
+.header {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.877);
+    position: relative;
+    border-bottom: 2px #3eb1eb solid;
+    &_wrapper {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include br(sm) {
+            height: 70px;
+        }
+
+        &-logo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-100px);
+
+            img {
+                width: 70px;
+
+                @include br(sm) {
+                    width: 40px;
+                }
+            }
+
+            figcaption {
+                color: white;
+                font-size: 15px;
+                text-transform: uppercase;
+
+            }
+        }
+
+        &-nav {
+            ul {
+                list-style-type: none;
+                display: flex;
+                opacity: 0;
+                transition: 0.3s ease;
+                transform: translateY(30px);
+                padding-inline-start: 0px;
+
+                @include br(sm) {
+                    display: block;
+                    position: absolute;
+                    z-index: 1;
+                    right: 0%;
+                    top: 77%;
+                    background-color: #20d6d8;
+                    border-left: 2px #209ad8 solid;
+                    border-bottom: 2px #209ad8 solid;
+                }
+
+                a {
+                    text-decoration: none;
+                }
+
+                li {
+                    padding: 15px;
+                    font-size: 30px;
+                    color: white;
+                    cursor: pointer;
+                    transition: 0.5s ease;
+
+                    @include br(sm) {
+                        font-size: 20px;
+                        padding: 5px 5px;
+                        margin: 5px 5px;
+                        text-transform: uppercase;
+                        text-align: center;
+                    }
+
+                    &:hover {
+                        background-color: white;
+                        border-radius: 20px;
+                        color: #3eb1eb;
+                        transition: 0.3s ease;
+                    }
+                }
+            }
+        }
+
+        &-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            transform: translateY(-100px);
+
+            span {
+                display: block;
+                width: 35px;
+                height: 5px;
+                background-color: white;
+                margin: 3px;
+                transition: 0.3s ease;
+
+                &:nth-child(2) {
+                    width: 25px;
+                }
+
+                &:last-of-type {
+                    width: 15px;
+                }
+            }
+
+            &:hover {
+                span {
+                    transition: 0.3s ease;
+
+                    &:nth-child(2) {
+                        width: 35px;
+                    }
+
+                    &:last-of-type {
+                        width: 35px;
+                    }
+                }
+            }
+        }
+    }
+
+    &_contacts-links {
+        display: flex;
+        background-color: #209ad8;
+        position: absolute;
+        border-radius: 5px;
+        top: -100%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        padding: 20px 20px;
+        border: 1px white solid;
+        z-index: 1;
+        a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px transparent solid;
+            transition: 0.3s ease;
+            margin: 5px 5px 0px 5px;
+            font-size: 15px;
+            &:hover {
+                border-bottom: 2px white solid;
+                transition: 0.3s ease;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+////Button Animation
+
+
+.openMenu {
+    opacity: 1 !important;
+    transition: 0.3s ease;
+    transform: translateY(0px) !important;
+}
+
+.close {
+    span {
+        &:first-of-type {
+            transform: rotate(45deg) translateX(5.5px);
+        }
+
+        &:nth-child(2) {
+            display: none;
+        }
+
+        &:last-of-type {
+            width: 35px;
+            transform: rotate(-45deg) translateX(5.5px);
+        }
+    }
+}
+
+.onload {
+    transform: translateY(0px) !important;
+    transition: 1s ease;
+}
+
+.openContacts {
+    top:100% !important;
+    transition: 0.3s ease;
+}

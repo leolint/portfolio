@@ -1,0 +1,1 @@
+.footer{width:100%;padding-top:100px;padding-bottom:50px}.footer_title{text-align:center;color:#fff;font-size:35px}.footer_wrapper{display:flex;justify-content:center;align-items:center}@media (max-width:768px){.footer_wrapper{flex-direction:column}}.footer_wrapper-item{cursor:pointer;margin:10px}.footer_wrapper-item img{width:300px}

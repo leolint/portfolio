@@ -1,0 +1,27 @@
+@import 'mixins';
+
+.footer {
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    &_title {
+        text-align: center;
+        color: white;
+        font-size: 35px;
+    }
+    &_wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include br(md) {
+            flex-direction: column;
+        }
+        &-item {
+            cursor: pointer;
+            margin: 10px;
+            img {
+                width: 300px;
+            }
+        }
+    }
+}

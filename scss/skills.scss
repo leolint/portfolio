@@ -1,0 +1,22 @@
+@import 'mixins';
+
+.skills {
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    &_wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        @include br(md) {
+           flex-wrap: wrap;
+        }
+        img {
+            width: 100px;
+            @include br(sm) {
+                margin: 10px;
+             }
+        }
+    }
+
+}
